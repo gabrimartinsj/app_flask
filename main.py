@@ -24,7 +24,7 @@ def main():
         else:
             resultado = "Reprovado."
 
-    return render_template('index2.html', media = media, resultado = resultado)
+    return render_template('index.html', media = media, resultado = resultado)
 
 if __name__ == '__main__':
     app.run(debug=True) # Executa a aplicação

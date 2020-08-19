@@ -1,170 +1,138 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>MPMG - M08</title>
+        <title>MPMG - M08</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css">
-  </head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css">
+    </head>
 
-  <body>
-      <nav class="navbar">
-          <div class="container">
-              <div class="navbar-brand">
-                  <a class="navbar-item" href="#">
-                      <img src="https:///upload.wikimedia.org/wikipedia/commons/9/92/Logo_mpmg.png" alt="MPMG" width="100">
-                  </a>
-                  <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
-                      <span aria-hidden="true"></span>
-                      <span aria-hidden="true"></span>
-                      <span aria-hidden="true"></span>
-                  </a>
-              </div>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#">
+                        <img src="https:///upload.wikimedia.org/wikipedia/commons/9/92/Logo_mpmg.png" alt="MPMG" width="100">
+                    </a>
+                </div>
 
-              <div class="navbar-menu">
-                  <div class="navbar-end">
-                      <div class="navbar-item">
-                          <div class="buttons">
-                              <a class="button is-info-light" href="#">Sair</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </nav>
-
-      <section class="section has-background-link-light">
-        <div class="container is-fluid">
-            <nav class="level">
-                <div class="columns">
-                    <div class="column ml-5">
-                        <h3 class="subtitle is-3">Defina o diretório raiz:</h3>
-                        <input id="input-folder" name="input-folder" type="file" class="file" data-show-preview="false" multiple webkitdirectory accept="image/*">
-
-                        <div id="errorBlock" class="help-block"></div>
-                        <script>
-                            $(document).on('ready', function() {
-                                $("#input-folder").fileinput({
-                                    browseLabel: 'Select Folder...',
-                                    previewFileIcon: '<i class="fa fa-file"></i>',
-                                    allowedPreviewTypes: null, // set to empty, null or false to disable preview for all types
-                                    previewFileIconSettings: {
-                                        'doc': '<i class="fa fa-file-word-o text-primary"></i>',
-                                        'xls': '<i class="fa fa-file-excel-o text-success"></i>',
-                                        'ppt': '<i class="fa fa-file-powerpoint-o text-danger"></i>',
-                                        'jpg': '<i class="fa fa-file-photo-o text-warning"></i>',
-                                        'pdf': '<i class="fa fa-file-pdf-o text-danger"></i>',
-                                        'zip': '<i class="fa fa-file-archive-o text-muted"></i>',
-                                        'htm': '<i class="fa fa-file-code-o text-info"></i>',
-                                        'txt': '<i class="fa fa-file-text-o text-info"></i>',
-                                        'mov': '<i class="fa fa-file-movie-o text-warning"></i>',
-                                        'mp3': '<i class="fa fa-file-audio-o text-warning"></i>',
-                                    },
-
-                                    previewFileExtSettings: {
-                                        'doc': function(ext) {
-                                            return ext.match(/(doc|docx)$/i);
-                                        },
-                                        'xls': function(ext) {
-                                            return ext.match(/(xls|xlsx)$/i);
-                                        },
-                                        'ppt': function(ext) {
-                                            return ext.match(/(ppt|pptx)$/i);
-                                        },
-                                        'jpg': function(ext) {
-                                            return ext.match(/(jp?g|png|gif|bmp)$/i);
-                                        },
-                                        'zip': function(ext) {
-                                            return ext.match(/(zip|rar|tar|gzip|gz|7z)$/i);
-                                        },
-                                        'htm': function(ext) {
-                                            return ext.match(/(php|js|css|htm|html)$/i);
-                                        },
-                                        'txt': function(ext) {
-                                            return ext.match(/(txt|ini|md)$/i);
-                                        },
-                                        'mov': function(ext) {
-                                            return ext.match(/(avi|mpg|mkv|mov|mp4|3gp|webm|wmv)$/i);
-                                        },
-                                        'mp3': function(ext) {
-                                            return ext.match(/(mp3|wav)$/i);
-                                        },
-                                    }
-                                });
-                            });
-                        </script>
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button is-info-light" href="#">Sair</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </div>
-    </section>
+            </div>
+        </nav>
 
-    <section class="section has-background-white">
-      <div class="container is-fluid">
-         <nav class="level has-background-link-light pb-6 pr-6 pl-6">
-             <div class="level-left">
-                 <div class="collumns">
-                     <div class="collumn ml-5">
-                         <h5 class="subtitle is-5">Passo 1: Processamento.</h5>
+        <section class="section has-background-link-light">
+            <div class="container is-fluid">
+                <nav class="level pl-6 pr-6">
+                    <div class="columns">
+                        <div class="column ml-5">
+                            <h3 class="subtitle is-3">Defina o diretório raiz</h3>
 
-                         <div class="buttons">
-                            <button class="button is-info is-fullwidth">Processar Imagens</span></button>
-                         </div>
+                            <div class="file is-info has-name">
+                                <label class="file-label">
+                                    <input class="file-input" type="file" name="resume" id="input-folder" name="input-folder" data-show-preview="false" multiple webkitdirectory accept="image/*">
 
-                            <div class="buttons">
-                                <button class="button is-info is-fullwidth">Processar Vídeos</button>
+                                    <span class="file-cta">
+                                        <span class="file-icon">
+                                            <i class="fas fa-upload"></i>
+                                        </span>
+
+                                        <span class="file-label mr-4">
+                                            Selecione um diretório
+                                        </span>
+                                    </span>
+
+                                    <span class="file-name has-background-white pl-6 pr-6">
+                                        Nome do diretório...
+                                    </span>
+                                </label>
                             </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
 
-                            <div class="buttons">
-                                <button class="button is-info is-fullwidth">Processar Todos</button>
+        <section class="section has-background-white">
+            <div class="container is-fullwidth">
+                <nav class="level has-background-link-light pb-6 pr-6 pl-6 ml-6 mr-6">
+                    <div class="level-left">
+                        <div class="collumns">
+                            <div class="collumn mr-6 ml-6">
+                                <h5 class="subtitle is-5 pt-6">Passo 1: Processamento</h5>
+
+                                <div class="buttons">
+                                    <button class="button is-info is-fullwidth">Processar Imagens</span></button>
+                                </div>
+
+                                <div class="buttons">
+                                    <button class="button is-info is-fullwidth">Processar Vídeos</button>
+                                </div>
+
+                                <div class="buttons">
+                                    <button class="button is-info is-fullwidth">Processar Todos</button>
+                                </div>
                             </div>
-                     </div>
-                 </div>
-             </div>
+                        </div>
+                    </div>
 
-              <div class="level-right">
-                  <div class="collumns">
-                      <div class="collumn mr-6">
-                          <h5 class="subtitle is-5 mt-6">Passo 2: Relatórios.</h5>
+                    <div class="level-right">
+                        <div class="collumns">
+                            <div class="collumn ml-6 mr-6">
+                                <h5 class="subtitle is-5 pt-6">Passo 2: Relatórios</h5>
 
-                          <div class="buttons mb-3">
-                              <button class="button has-background-info-dark has-text-white">Configurações</button>
-                          </div>
+                                <div class="buttons">
+                                    <a data-toggle="modal" id="config-modal" class="button has-background-info-dark has-text-white is-fullwidth" value="btn_display_value" data-target="#config-modal" onclick="aPassValueFunction(this)">Configurações</a>
 
-                          <div class="buttons">
-                              <button class="button is-info is-fullwidth">Gerar Relatório de Imagens</span></button>
-                          </div>
+                                    <script>
+                                        function aPassValueFunction(obj){
+                                            let valuefromID = obj.id;
+                                            $('#hidden_input').val(valuefromID);
+                                            $("#config-modal").modal("show");
+                                        }
+                                    </script>
+                                </div>
 
-                          <div class="buttons">
-                              <button class="button is-info is-fullwidth">Gerar Relatório de Vídeos</button>
-                          </div>
+                                <div class="buttons">
+                                    <button class="button is-info is-fullwidth">Gerar Relatório de Imagens</span></button>
+                                </div>
 
-                          <div class="buttons">
-                              <button class="button is-info is-fullwidth">Gerar Relatório de Todos</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-             </nav>
-          </div>
+                                <div class="buttons">
+                                    <button class="button is-info is-fullwidth">Gerar Relatório de Vídeos</button>
+                                </div>
 
-    </section>
+                                <div class="buttons">
+                                    <button class="button is-info is-fullwidth">Gerar Relatório de Todos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
 
-    <section class="section has-background-link-light">
-        <div class="container is-fluid">
-            <h5 class="subtitle is-5 ml-5">Log do Processamento:</h5>
-            <nav class="level">
-                <main role="main" class="column ml-6 mr-6 pt-5 pb-5 pl-5 pr-5 box-deco has-background-white">
-                    <article class="blog-post">
-                        <h4 class="title is-4">Área de Log</h4>
-                    </article>
-                </main>
-            </nav>
-        </div>
-    </section>
-  </body>
+        <section class="section has-background-link-light">
+            <div class="container is-fluid">
+                <h5 class="subtitle is-5 pl-6 ml-5">Log do Processamento</h5>
+
+                <nav class="level pl-5 pr-5">
+                    <main role="main" class="column ml-6 mr-6 pt-5 pb-5 pl-5 pr-5 box-deco has-background-white">
+                        <article class="blog-post">
+                            <h4 class="title is-4">Área de Log</h4>
+                        </article>
+                    </main>
+                </nav>
+            </div>
+        </section>
+    </body>
 </html>

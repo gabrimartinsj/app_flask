@@ -21,23 +21,20 @@
                         <a class="navbar-item" href="#">
                             <img src="https:///upload.wikimedia.org/wikipedia/commons/9/92/Logo_mpmg.png" alt="MPMG" width="100">
                         </a>
-                    </div>  
+                    </div>
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-end">
-                            <a href="{{ url_for('main.index') }}" class="navbar-item">
-                                Home
-                            </a>
-                            {% if current_user.is_authenticated %}
-                            <a href="{{ url_for('main.profile') }}" class="navbar-item">
-                                Análise
-                            </a>
-                            {% endif %}
                             {% if not current_user.is_authenticated %}
                             <a href="{{ url_for('auth.login') }}" class="navbar-item">
-                                Login
+                                Acesso
                             </a>
                             <a href="{{ url_for('auth.signup') }}" class="navbar-item">
                                 Cadastro
+                            </a>
+                            {% endif %}
+                            {% if current_user.is_authenticated and page != 'home' %}
+                            <a href="{{ url_for('main.home') }}" class="navbar-item">
+                                Buscar Análise
                             </a>
                             {% endif %}
                             {% if current_user.is_authenticated %}

@@ -12,13 +12,14 @@ def login():
 @auth.route('/signup')
 def signup():
     return render_template('signup.html')
+
 @auth.route('/signup', methods = ['POST'])
 def signuppost():
     email = request.form.get('email')
     name = request.form.get('name')
     password = request.form.get('password')
 
-    user = User.query.filter_by(email=email).first() 
+    user = User.query.filter_by(email=email).first()
 
     if user:
         flash('Endereço de e-mail já cadastrado.')
@@ -31,6 +32,7 @@ def signuppost():
     db.session.commit()
 
     return redirect(url_for('auth.login'))
+
 @auth.route('/login', methods=['POST'])
 def login_post():
     email = request.form.get('email')
@@ -39,12 +41,12 @@ def login_post():
 
     user = User.query.filter_by(email=email).first()
 
-   
     if not user or not check_password_hash(user.password, password):
         flash('Por favor, cheque suas credenciais e tente novamente.')
         return redirect(url_for('auth.login'))
     login_user(user, remember=remember)
-    return redirect(url_for('main.profile'))
+    return redirect(url_for('main.home'))
+
 @auth.route('/logout')
 @login_required
 def logout():
